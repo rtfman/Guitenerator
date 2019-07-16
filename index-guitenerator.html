@@ -4,12 +4,235 @@
             <meta charset="UTF-8">
             <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
             <link type="text/css" rel="stylesheet" href="style-guitenerator.css">
-            <title>G[uit]ener[a]to[r]</title>
+            <title>Guitenerator</title>
     </head>
     <body>
         
-        <h1>G[uit]ener[a]to[r]</h1>
+        <h1>Guitenerator</h1>
+        <!-- SCALE GENERATOR WRAPPER -->
         <div class="scale-wrapper">
+            <div class="sc-menu-wrapper">
+                <div class="menu rt">
+                    <p id="menu-label">ROOT</p>   
+                    <select class="select-style rt">
+                        <option value="sel" disabled selected>select</option>
+                        <option value="a">A</option>
+                        <option value="aSh">A#/Bb</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="cSh">C#/Db</option>
+                        <option value="d">D</option>
+                        <option value="dSh">D#/Eb</option>
+                        <option value="e">E</option>
+                        <option value="f">F</option>
+                        <option value="fSh">F#/Gb</option>
+                        <option value="g">G</option>
+                        <option value="gSh">G#/Ab</option> 
+                    </select>
+                </div>
+                <div class="menu qual">
+                    <p id="menu-label">QUALITY</p>
+                    <select class="select-style q">
+                        <option value="none" selected>none</option>
+                        <option value="M" >M</option>
+                        <option value="M6">M6</option>
+                        <option value="M7">M7</option>
+                        <option value="m">m</option>
+                        <option value="min6">m6</option>
+                        <option value="min7">m7</option>
+                        <option value="min/M7">min/M7</option>
+                        <option value="min7b5">m7b5</option>
+                        <option value="dim">dim</option>
+                        <option value="dim7">dim7</option>
+                        <option value="aug">aug</option>
+                        <option value="aug7">aug7</option>
+                        <option value="sus2">sus2</option>
+                        <option value="sus4">sus4</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+                <div class="menu ex">
+                    <p id="menu-label">EX 1</p>
+                    <select class="select-style ex1">
+                        <option value="null">none</option>
+                        <option value="b9">b9</option>
+                        <option value="9">9</option>
+                        <option value="#9">#9</option>
+                        <option value="11">11</option>
+                        <option value="#11">#11</option>
+                        <option value="#5">#5</option>
+                        <option value="b13">b13</option>
+                        <option value="13">13</option>
+                    </select>
+                </div>
+                
+                <div class="menu ex">
+                    <p id="menu-label">EX 2</p>
+                    <select class="select-style ex2">
+                        <option value="null">none</option>
+                        <option value="b9">b9</option>
+                        <option value="9">9</option>
+                        <option value="#9">#9</option>
+                        <option value="11">11</option>
+                        <option value="#11">#11</option>
+                        <option value="b13">b13</option>
+                        <option value="13">13</option>
+                    </select>
+                </div>
+                
+                <div class="btn-wrapper">
+                        <button class="btn" id="btn-menu-gen">GENERATE</button>
+                        <button class="btn" id="btn-rand-gen">RANDOM!</button>
+                </div>
+            
+            
+
+            </div>
+
+            
+            
+            <div class="scale-text-disp">
+                
+                <div id="root-disp"></div>
+                <div id="qual-disp"></div>
+                <div id="ex1-disp"></div>      
+            </div>
+            <span class="color-key">
+                    <span><div id="key-r">R</div></span>
+                    <span><div id="key-3"></div></span>
+                    <span><div id="key-5"></div></span>
+                    <span><div id="key-7"></div></span>
+                    <span><div id="key-ex1"></div></span>
+                    <span><div id="key-ex2"></div></span>
+            </span>
+
+            <div class="fretboard">
+                <!-- Open Fret -->
+                <ol>
+                    <li>
+                        <span><i class="mrk sc-note-e"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-b"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-g"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-d"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-a"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-e"></i></span> <!-- 6th String -->
+                    </li>
+                </ol>
+                <!-- Frets -->
+                <ul>
+                    <!-- Fret 1 -->
+                    <li>
+                        <span><i class="mrk sc-note-f"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-c"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-g-sh"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-d-sh"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-a-sh"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-f"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 2 -->
+                    <li>
+                        <span><i class="mrk sc-note-f-sh"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-c-sh"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-a"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-e"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-b"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-f-sh"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 3 -->
+                    <li>
+                        <span><i class="mrk sc-note-g"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-d"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-a-sh"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-f"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-c"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-g"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 4 -->
+                    <li>
+                        <span><i class="mrk sc-note-g-sh"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-d-sh"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-b"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-f-sh"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-c-sh"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-g-sh"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 5 -->
+                    <li>
+                        <span><i class="mrk sc-note-a"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-e"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-c"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-g"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-d"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-a"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 6 -->
+                    <li>
+                        <span><i class="mrk sc-note-a-sh"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-f"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-c-sh"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-g-sh"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-d-sh"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-a-sh"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 7 -->
+                    <li>
+                        <span><i class="mrk sc-note-b"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-f-sh"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-d"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-a"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-e"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-b"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 8 -->
+                    <li>
+                        <span><i class="mrk sc-note-c"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-g"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-d-sh"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-a-sh"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-f"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-c"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 9 -->
+                    <li>
+                        <span><i class="mrk sc-note-c-sh"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-g-sh"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-e"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-b"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-f-sh"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-c-sh"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 10 -->
+                    <li>
+                        <span><i class="mrk sc-note-d"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-a"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-f"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-c"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-g"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-d"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 11 -->
+                    <li>
+                        <span><i class="mrk sc-note-d-sh"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-a-sh"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-f-sh"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-c-sh"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-g-sh"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-d-sh"></i></span> <!-- 6th String -->
+                    </li>
+                    <!-- Fret 12 -->
+                    <li>
+                        <span><i class="mrk sc-note-e"></i></span> <!-- 1st String -->
+                        <span><i class="mrk sc-note-b"></i></span> <!-- 2nd String -->
+                        <span><i class="mrk sc-note-g"></i></span> <!-- 3rd String -->
+                        <span><i class="mrk sc-note-d"></i></span> <!-- 4th String -->
+                        <span><i class="mrk sc-note-a"></i></span> <!-- 5th String -->
+                        <span><i class="mrk sc-note-e"></i></span> <!-- 6th String -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- HORD GENERATOR WRAPPER -->
+        <div class="chord-wrapper">
             <div class="ch-menu-wrapper">
                 <div class="menu rt">
                     <p id="menu-label">ROOT</p>   
@@ -52,7 +275,7 @@
                 </div>
                 <div class="menu ex">
                     <p id="menu-label">EX 1</p>
-                    <select class="select-style ex">
+                    <select class="select-style ex1">
                         <option value="null">none</option>
                         <option value="b9">b9</option>
                         <option value="9">9</option>
@@ -67,14 +290,13 @@
                 
                 <div class="menu ex">
                     <p id="menu-label">EX 2</p>
-                    <select class="select-style ex">
+                    <select class="select-style ex2">
                         <option value="null">none</option>
                         <option value="b9">b9</option>
                         <option value="9">9</option>
                         <option value="#9">#9</option>
                         <option value="11">11</option>
                         <option value="#11">#11</option>
-                        <option value="#5">#5</option>
                         <option value="b13">b13</option>
                         <option value="13">13</option>
                     </select>
@@ -91,11 +313,11 @@
 
             
             
-            <div class="chord-text-disp">
+            <div class="scale-text-disp">
                 
                 <div id="root-disp"></div>
                 <div id="qual-disp"></div>
-                <div id="ex-disp"></div>      
+                <div id="ex1-disp"></div>      
             </div>
             <span class="color-key">
                     <span><div id="key-r">R</div></span>
@@ -110,7 +332,7 @@
                 <!-- Open Fret -->
                 <ol>
                     <li>
-                        <span><i class="mrk op note-e"></i></span> <!-- 1st String -->
+                        <span><i class="mrk op ch-note-e"></i></span> <!-- 1st String -->
                         <span><i class="mrk op note-b"></i></span> <!-- 2nd String -->
                         <span><i class="mrk op note-g"></i></span> <!-- 3rd String -->
                         <span><i class="mrk op note-d"></i></span> <!-- 4th String -->
@@ -231,7 +453,6 @@
                 </ul>
             </div>
         </div>
-
 
         <script src="guitenerator.js"></script>
     </body>

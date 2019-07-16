@@ -4,7 +4,7 @@ const model = (() => {
     const key = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G','G#/Ab']
     const quality = ['M', 'M6', 'M7', 'm', 'm6', 'm7', 'min/M7', 'm7b5', 'dim', 'dim7', 'aug', 'aug7', 'sus2', 'sus4', '7', '7']
     let extension = ['9', 'b9', '#9', '11', '#11', '#5', '13', 'b13'];
-    let randKey, randQual, randEx;
+    let randKey, randQual, randEx1, randEx2;
 
     const rand = (el) => {
         let num = Math.floor(Math.random() * el.length)
@@ -53,9 +53,11 @@ const model = (() => {
         //Random Extension generator
         genEx: () => {
             extensionDefine(randQual)
-            randEx = rand(extension);
+            randEx1 = rand(extension);
             //console.log(extension);
-            return {ex: randEx};
+            return {
+                ex1: randEx1,
+            };
         },
 
         getArr: () => {
@@ -69,22 +71,23 @@ const model = (() => {
 
 })();
 
-///////////CONTROLLER///////////
+                      /////////// SCALE CONTROLLER      ///////////
 
-const controller = (() => {
-    let displayRoot, displayQual, displayEx;
+const scaleController = (() => {
+    let displayRoot, displayQual, displayEx1, displayEx2;
     let rootArrAfter, rootArrBefore, fullRootArr, rootIndex;
     let DOMNotes = [];
 
-    let  selectRt, selectQ, selectEx;
+    let  selectRt, selectQ, selectEx1, selectEx2;
     
     const DOM = {
         rootDisp: "root-disp",
         qualDisp: "qual-disp",
-        exDisp: "ex-disp",
+        ex1Disp: "ex1-disp",
         rtSel: '.select-style.rt',
         qSel: '.select-style.q',
-        exSel: '.select-style.ex',
+        ex1Sel: '.select-style.ex1',
+        ex2Sel: '.select-style.ex2',
         btnRand: "btn-rand-gen",
         btnMenu: "btn-menu-gen",
         keyR: "key-r",
@@ -93,6 +96,18 @@ const controller = (() => {
         key7: "key-7",
         keyEx1: "key-ex1",
         keyEx2: "key-ex2",
+        c: '.sc-note-c',
+        cSh: '.sc-note-c-sh',
+        d: '.sc-note-d',
+        dSh: '.sc-note-d-sh',
+        e: '.sc-note-e',
+        f: '.sc-note-f',
+        fSh: '.sc-note-f-sh',
+        g: '.sc-note-g',
+        gSh: '.sc-note-g-sh',
+        a: '.sc-note-a',
+        aSh: '.sc-note-a-sh',
+        b: '.sc-note-b',
     }
 
     
@@ -102,10 +117,10 @@ const controller = (() => {
         return disp.textContent = el}
 
     //Clears Chord text display
-    const textDispClear = (rt, q, ex) => {
+    const textDispClear = (rt, q, ex1, ex2) => {
         rt.textContent = '';
         q.textContent = '';
-        ex.textContent = '';
+        ex1.textContent = '';
     }
 
 
@@ -146,7 +161,7 @@ const controller = (() => {
         note.style.backgroundColor = "#54a3e5"//blue
     }
 
-    const colorEx = (note) => {
+    const colorEx1 = (note) => {
         note.style.backgroundColor = "#4cc6d3"//teal
     }
 
@@ -157,20 +172,8 @@ const controller = (() => {
     
     //Reorders array of DOM Nodes starting with displayed Root Note
     const DOMNoteArr = () => {
-        const c = '.note-c';
-        const cSh = '.note-c-sh'
-        const d = '.note-d'
-        const dSh = '.note-d-sh'
-        const e = '.note-e'
-        const f = '.note-f'
-        const fSh = '.note-f-sh'
-        const g = '.note-g'
-        const gSh = '.note-g-sh'
-        const a = '.note-a'
-        const aSh = '.note-a-sh'
-        const b = '.note-b'
 
-        const noteArr = [a, aSh, b, c, cSh, d, dSh, e, f, fSh, g, gSh]
+        const noteArr = [DOM.a, DOM.aSh, DOM.b, DOM.c, DOM.cSh, DOM.d, DOM.dSh, DOM.e, DOM.f, DOM.fSh, DOM.g, DOM.gSh]
 
         if (fullRootArr[0] === 'A') {
             DOMNotes = noteArr
@@ -225,20 +228,21 @@ const controller = (() => {
     const rootMrkDisplay = () => {
         markerReset();
         
-        let noteC = document.querySelectorAll('.note-c');
-        let noteCSh = document.querySelectorAll('.note-c-sh');
-        let noteD = document.querySelectorAll('.note-d');
-        let noteDSh = document.querySelectorAll('.note-d-sh');
-        let noteE = document.querySelectorAll('.note-e');
-        let noteF = document.querySelectorAll('.note-f');
-        let noteFSh = document.querySelectorAll('.note-f-sh');
-        let noteG = document.querySelectorAll('.note-g');
-        let noteGSh = document.querySelectorAll('.note-g-sh');
-        let noteA = document.querySelectorAll('.note-a');
-        let noteASh = document.querySelectorAll('.note-a-sh');
-        let noteB = document.querySelectorAll('.note-b');
+        let noteC = document.querySelectorAll(DOM.c);
+        let noteCSh = document.querySelectorAll(DOM.cSH);
+        let noteD = document.querySelectorAll(DOM.d);
+        let noteDSh = document.querySelectorAll(DOM.dSh);
+        let noteE = document.querySelectorAll(DOM.e);
+        let noteF = document.querySelectorAll(DOM.f);
+        let noteFSh = document.querySelectorAll(DOM.fSh);
+        let noteG = document.querySelectorAll(DOM.g);
+        let noteGSh = document.querySelectorAll(DOM.gSh);
+        let noteA = document.querySelectorAll(DOM.a);
+        let noteASh = document.querySelectorAll(DOM.aSh);
+        let noteB = document.querySelectorAll(DOM.b);
         
         const mrkDisp = (nt) => {
+            
             nt.style.display = "block"
             //nt.innerHTML = "R"
         }
@@ -347,7 +351,7 @@ const controller = (() => {
             qualStyler5th(P5, 'P5');
             qualStyler7th(M6, 'M6');
         } else if (displayQual === 'M7') {
-            if(displayEx === '#5') {
+            if(displayEx1 === '#5') {
                 qualStyler3rd(M3, 'M3');
                 qualStyler7th(M7, 'M7');
             } else {
@@ -357,7 +361,7 @@ const controller = (() => {
             }
             
         } else if (displayQual === 'm') {
-            if (displayEx === '#5') {
+            if (displayEx1 === '#5') {
                 qualStyler3rd(m3, 'm3');
             } else {
                 qualStyler3rd(m3, 'm3');
@@ -369,7 +373,7 @@ const controller = (() => {
             qualStyler5th(P5, 'P5');
             qualStyler7th(M6, 'M6');
         } else if (displayQual === 'm7') {
-            if (displayEx === '#5') {
+            if (displayEx1 === '#5') {
                 qualStyler3rd(m3, 'm3');
                 qualStyler7th(m7, 'm7');
             } else {
@@ -378,7 +382,7 @@ const controller = (() => {
                 qualStyler7th(m7, 'm7');
             }
         } else if (displayQual === 'min/M7') {
-            if (displayEx === '#5') {
+            if (displayEx1 === '#5') {
                 qualStyler3rd(m3, 'm3');
                 qualStyler7th(M7, 'M7');
             } else {
@@ -423,7 +427,7 @@ const controller = (() => {
     }
 
     //Displays Extension Markers
-    const noteMrkExStyle = () => {
+    const noteMrkExStyle = (ex) => {
         let m2 = document.querySelectorAll(`${DOMNotes[1]}`);
         let M2 = document.querySelectorAll(`${DOMNotes[2]}`);
         let m3 = document.querySelectorAll(`${DOMNotes[3]}`);
@@ -439,27 +443,27 @@ const controller = (() => {
         const exStyler = (el, tx) => {
             for (let i = 0; i < el.length; i++) {
                 el[i].style.display = "block"
-                colorEx(el[i]);
+                colorEx1(el[i]);
                 //el[i].innerHTML = tx;
             }
             colorKeyDisp(DOM.keyEx1, tx)
         }
 
-        if (displayEx === 'b9') {
+        if (ex === 'b9') {
             exStyler(m2, 'b9');
-        } else if (displayEx === '9') {
+        } else if (ex === '9') {
             exStyler(M2, '9');
-        } else if (displayEx === '#9') {
+        } else if (ex === '#9') {
             exStyler(m3, '#9');
-        } else if (displayEx === '11') {
+        } else if (ex === '11') {
             exStyler(P4, '11');
-        } else if (displayEx === '#11') {
+        } else if (ex === '#11') {
             exStyler(d5, '#11');
-        } else if (displayEx === '#5') {
+        } else if (ex === '#5') {
             exStyler(m6, '#5');
-        } else if (displayEx === 'b13') {
+        } else if (ex === 'b13') {
             exStyler(m6, 'b13');
-        } else if (displayEx === '13') {
+        } else if (ex === '13') {
             exStyler(M6, '13');
         }
     }
@@ -473,6 +477,7 @@ const controller = (() => {
     // clears Color Key div text
     const colorClear = () => {
         document.getElementById(DOM.key3).textContent = "";
+        document.getElementById(DOM.key5).textContent = "";
         document.getElementById(DOM.key7).textContent = "";
         document.getElementById(DOM.keyEx1).textContent = "";
         document.getElementById(DOM.keyEx2).textContent = "";
@@ -483,26 +488,28 @@ const controller = (() => {
 
         //Display Chord Text from random generator
         getChordDisplay: () => {
-
             displayRoot = display(model.genChord().key, document.getElementById(DOM.rootDisp))
             displayQual = display(model.genChord().qual, document.getElementById(DOM.qualDisp))
-            displayEx = display(model.genEx().ex, document.getElementById(DOM.exDisp))
-  
+            displayEx1 = display(model.genEx().ex1, document.getElementById(DOM.ex1Disp))
+            //console.log(displayEx1);
         },
 
         //Display Chord Text From Chord Menu
         menuChordTextDisp: () => {
             const dispRt = document.getElementById(DOM.rootDisp);
             const dispQ = document.getElementById(DOM.qualDisp);
-            const dispEx = document.getElementById(DOM.exDisp);
+            const dispEx1 = document.getElementById(DOM.ex1Disp);
+            const dispEx2 = document.getElementById(DOM.ex2Disp);
 
-            textDispClear(dispRt, dispQ, dispEx);
+            textDispClear(dispRt, dispQ, dispEx1, dispEx2);
             
             selectRt = document.querySelector(DOM.rtSel).options[document.querySelector(DOM.rtSel).selectedIndex];
             
             selectQ = document.querySelector(DOM.qSel).options[document.querySelector(DOM.qSel).selectedIndex];
             
-            selectEx = document.querySelector(DOM.exSel).options[document.querySelector(DOM.exSel).selectedIndex];
+            selectEx1 = document.querySelector(DOM.ex1Sel).options[document.querySelector(DOM.ex1Sel).selectedIndex];
+    
+            selectEx2 = document.querySelector(DOM.ex2Sel).options[document.querySelector(DOM.ex2Sel).selectedIndex];
     
             if(selectRt.value !== "sel") {
                 display(selectRt.text, dispRt)
@@ -512,9 +519,14 @@ const controller = (() => {
                 display(selectQ.text, dispQ)
             }
             
-            if (selectEx.text !== 'none') {
-                display(selectEx.text, dispEx)
+            if (selectEx1.text !== 'none') {
+                display(selectEx1.text, dispEx1)
             }
+            if (selectEx2.text !== 'none') {
+                display(selectEx2.text, dispEx2)
+            }
+
+
         },
         
 
@@ -538,8 +550,10 @@ const controller = (() => {
 
         menuExDisp: () => {
             markerReset();
-            const select = document.querySelector(DOM.exSel)
-            displayEx = select.options[select.selectedIndex].text;
+            const select1 = document.querySelector(DOM.ex1Sel)
+            const select2 = document.querySelector(DOM.ex2Sel)
+            displayEx1 = select1.options[select1.selectedIndex].text;
+            displayEx2 = select1.options[select1.selectedIndex].text;
             //console.log(displayEx);
         },
 
@@ -550,17 +564,18 @@ const controller = (() => {
                 
             selectQ = document.querySelector(DOM.qSel).options[document.querySelector(DOM.qSel).selectedIndex].value = "none";
             
-            selectEx = document.querySelector(DOM.exSel).options[document.querySelector(DOM.exSel).selectedIndex].value = "none";
+            selectEx1 = document.querySelector(DOM.ex1Sel).options[document.querySelector(DOM.ex1Sel).selectedIndex].value = "none";
 
         },
 
-        //Display note markers other than root
+        //Display note markers
         mrkDisp: () => {
             rootArr(displayRoot); 
             DOMNoteArr();
             rootMrkDisplay();
             noteMrkQualStyle();  
-            noteMrkExStyle();  
+            noteMrkExStyle(displayEx1); 
+            //noteMrkExStyle(displayEx2); 
         },
 
 
@@ -570,32 +585,33 @@ const controller = (() => {
 })();
 
 ///////VIEW/////////////
-const view = ((mod, ctrl) => {
-    const DOM = ctrl.getDomStrings();
+const view = ((mod, scaleCtrl) => {
+    const DOM = scaleCtrl.getDomStrings();
     
     const eventListeners = () => {
+        //Scale Random Button
         document.getElementById(DOM.btnRand).addEventListener('click', function() {
-            ctrl.getChordDisplay();
-            ctrl.mrkDisp();
+            scaleCtrl.getChordDisplay();
+            scaleCtrl.mrkDisp();
             //ctrl.menuDispClear();
         });
-
+        //Scal Generate Button
         document.getElementById(DOM.btnMenu).addEventListener('click', function() {
-            ctrl.menuChordTextDisp();
-            ctrl.menuRootDisp();
-            ctrl.menuQualDisp();
-            ctrl.menuExDisp();
-            ctrl.mrkDisp();
+            scaleCtrl.menuChordTextDisp();
+            scaleCtrl.menuRootDisp();
+            scaleCtrl.menuQualDisp();
+            scaleCtrl.menuExDisp();
+            scaleCtrl.mrkDisp();
         });
     }
 
     return {
         init: () => {
             console.log('app start')
-            ctrl.menuDispClear();
+            //ctrl.menuDispClear();
             eventListeners();
         }
     }
-})(model, controller);
+})(model, scaleController);
 
 view.init();

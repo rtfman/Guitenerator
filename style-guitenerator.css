@@ -49,8 +49,10 @@ h1 {
     justify-content: center;
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 27em;
 }
+
+
 
 .disp-wrapper {
     border: 2px solid;
@@ -60,7 +62,7 @@ h1 {
 
 /* DISPLAY ELEMENTS*/
 
-.chord-text-disp {
+.scale-text-disp {
     position: relative;
     display: flex;
     font-size: 35px;
@@ -68,9 +70,11 @@ h1 {
     height: 50px;
 }
 
+
+
 #root-disp, 
 #qual-disp, 
-#ex-disp{
+#ex1-disp{
     display: flex;
     padding-left: 10px;
     justify-content: center;
@@ -124,6 +128,16 @@ h1 {
 
 
 /* CHORD MENU ELEMENTS*/
+.sc-menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    margin: 0 12.5%;
+    height: 100px;
+    position: relative;
+    justify-content: space-between;
+}
+
 
 .ch-menu-wrapper {
     display: flex;
@@ -335,15 +349,6 @@ h1 {
 
 /* Note Markers */ 
 
-.color-holder { /* Dummy class for note marker colors*/ 
-    color: #fc5549; /* For Root */
-    color: #9bd5fc; /* For 3rd */
-    color: #6497f7; /* For 5th */
-    color: #54a3e5; /* For 7th */
-    color: #73dada; /* For Extensions */
-}
-
-
 .fretboard ol li span i, .fretboard ul li span i {
     display: none;
     position: absolute;
@@ -374,10 +379,29 @@ h1 {
 *      CHORD DIAGRAM FRETBOARD 
 ***********************************************/
 
-.chord-dia-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
+.colors {
+    color: #fc5549; /* Root Red*/
+    color: #9bd5fc; /* 3rd Blue*/
+    color: #6497f7; /* 5th Blue*/
+    color: #54a3e5; /* 7th Blue*/
+    color: #4cc6d3; /* Extension 1 Teal*/
+    color: #90f1fc; /* Extension 2 Teal*/
 }
 
+.chord-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-top: 35px;
+    height: 27em;
+}
+
+.chord-text-disp {
+    position: relative;
+    display: flex;
+    font-size: 35px;
+    justify-content: center;
+    height: 50px;
+}
