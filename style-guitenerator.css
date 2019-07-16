@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+}
+
+:after,:before {
+	box-sizing: inherit;
+}
+
+body, html {
+    font-family: lato;
+    height: 100vh
+}
+
+body {
+    margin: 0;
+    display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: column;
+	-ms-flex-pack: stretch;
+	justify-content: stretch;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100vw;
+	padding: 50px;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 50px;  
+    margin: 0;
+}
+
+/************************************************************
+*                SCALE GENERATOR DISPLAY
+***********************************************************/
+.colors {
+    color: #fc5549; /* Root Red*/
+    color: #9bd5fc; /* 3rd Blue*/
+    color: #6497f7; /* 5th Blue*/
+    color: #54a3e5; /* 7th Blue*/
+    color: #4cc6d3; /* Extension 1 Teal*/
+    color: #90f1fc; /* Extension 2 Teal*/
+}
+
+.scale-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.disp-wrapper {
+    border: 2px solid;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+/* DISPLAY ELEMENTS*/
+
+.chord-text-disp {
+    position: relative;
+    display: flex;
+    font-size: 35px;
+    justify-content: center;
+    height: 50px;
+}
+
+#root-disp, 
+#qual-disp, 
+#ex-disp{
+    display: flex;
+    padding-left: 10px;
+    justify-content: center;
+}
+
+.color-key {
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    width: 33%;
+    margin: 20px 33%;
+}
+
+.color-key span {
+    height: 25px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+.color-key span div {
+    display: flex;
+    transform: rotate(-45deg);
+    justify-content: center;
+    margin-top: 3px;
+    margin-right: 2px;
+}
+
+.color-key span:nth-child(1) {
+    background-color: #fc5549; /* Root */
+}
+
+.color-key span:nth-child(2) {
+    background-color: #9bd5fc; /* 3rd */
+}
+
+.color-key span:nth-child(3) {
+    background-color: #6497f7; /* 5th */
+}
+
+.color-key span:nth-child(4) {
+    background-color: #54a3e5; /* 7th */
+}
+
+.color-key span:nth-child(5) {
+    background-color: #4cc6d3; /* Ex 1 */
+}
+
+.color-key span:nth-child(6) {
+    background-color: #90f1fc; /* Ex 2 */
+}
+
+
+/* CHORD MENU ELEMENTS*/
+
+.ch-menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    margin: 0 12.5%;
+    height: 100px;
+    position: relative;
+    justify-content: space-between;
+}
+
+#menu-label {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    justify-content: center;
+    margin: 5px;
+}
+
+.select-style {
+    border: 1px solid #e7e7e7;
+    height: 44px;
+    font-size: 16px;
+    background-color: #fff;
+    font-weight: 400;
+    transition: border 0.3s;
+    
+}
+
+.menu {
+    height: 100%;
+    font-size: 16px;
+    color: inherit;
+    background-color: #fff;
+    font-weight: 300;
+    transition: border 0.3s;
+    justify-content: center;
+    padding: 5px;
+}
+
+/* .select-style.rt {
+    background-color: #e77094;
+}
+
+.select-style.q {
+    background-color: #54a3e5;
+}
+
+.select-style.ex {
+    background-color: #4cc6d3;
+} */
+
+
+/*/BUTTONS/*/  
+
+.btn-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn {
+    font-size: 20px;
+    border-radius: 7%;
+    width: 120px;
+    height: 40px;
+    margin: 15px;
+    margin-top: 35px; 
+}
+
+
+/**************************************************
+* SCALE FRETBOARD
+***************************************************/
+
+.fretboard {
+    margin: 10px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #888;
+    border-left: none;
+}
+
+
+/* Open Strings */ 
+.fretboard ol {
+    display: flex;
+    flex-direction: row;
+    left: 20px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.fretboard ol li {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Frets */
+
+.fretboard ul, .fretboard ul li {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+}
+
+.fretboard ul {
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.fretboard ul li {
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 5px double #888;
+    width: 8.33333333%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.fretboard ul li:last-child {
+    border-right: none;
+}
+
+/* Nut */
+
+.fretboard ul li:first-child {
+    border-left: 12px solid #888;
+}
+
+/* Open Strings */
+
+.fretboard ol li span {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2px;
+    z-index: 1;
+}
+
+/* Fretted Strings */
+
+.fretboard ul li span {
+    display: block;
+    position: relative;
+    width: calc(100% + 3px);
+    height: 2px;
+    background-color: #888;
+    z-index: 1;
+}
+
+.fretboard ul li:last-child span {
+    width: 100%;
+}
+
+/* 3, 5, 7, 9, Dots */
+
+.fretboard ul li:nth-child(3):before, .fretboard ul li:nth-child(5):before, .fretboard ul li:nth-child(7):before, .fretboard ul li:nth-child(9):before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #777;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+/* 12th Fret Dots */
+.fretboard ul li:nth-child(12):before, .fretboard ul li:nth-child(12):after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #777;
+    border-radius: 50%;
+    
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+.fretboard ul li:nth-child(12):before {
+    top: calc(25% - 4px);
+}
+
+.fretboard ul li:nth-child(12):after {
+    top: calc(75% + 4px);
+}
+
+/* Note Markers */ 
+
+.color-holder { /* Dummy class for note marker colors*/ 
+    color: #fc5549; /* For Root */
+    color: #9bd5fc; /* For 3rd */
+    color: #6497f7; /* For 5th */
+    color: #54a3e5; /* For 7th */
+    color: #73dada; /* For Extensions */
+}
+
+
+.fretboard ol li span i, .fretboard ul li span i {
+    display: none;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    top: -9px;
+    left: 50%;
+    margin-left: -9px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 600;
+    text-align: center;
+    transform: rotate(45deg);
+}
+
+/* Open Note Markers */
+
+.fretboard ol li span i {
+    background-color: #e01854;
+}
+
+/* Closed Fret Marker */
+.fretboard ul li span i { 
+    background-color: #e01854;
+}
+
+/*********************************************
+*      CHORD DIAGRAM FRETBOARD 
+***********************************************/
+
+.chord-dia-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
