@@ -89,6 +89,7 @@ const scaleController = (() => {
         ex2Sel: '.select-style.ex2',
         btnRand: "btn-rand-gen",
         btnMenu: "btn-menu-gen",
+        btnColorDrop: '.btn-color-drop',
         keyR: "key-r",
         key3: "key-3",
         key5: "key-5",
@@ -577,6 +578,9 @@ const scaleController = (() => {
             //noteMrkExStyle(displayEx2); 
         },
 
+        colorChangeKeyMenu: () => {
+            
+        }
 
             
     }
@@ -587,6 +591,34 @@ const scaleController = (() => {
 const view = ((mod, scaleCtrl) => {
     const DOM = scaleCtrl.getDomStrings();
     
+    const colorKeyEventListen = () => {
+        
+        document.getElementById("drop1").addEventListener('click', function () {
+            console.log('color drop1')
+        });
+        document.getElementById("drop2").addEventListener('click', function () {
+            console.log('color drop2')
+        });
+        document.getElementById("drop3").addEventListener('click', function () {
+            console.log('color drop3')
+        });
+        document.getElementById("drop4").addEventListener('click', function () {
+            console.log('color drop4')
+        });
+        document.getElementById("drop5").addEventListener('click', function () {
+            console.log('color drop5')
+        });
+        document.getElementById("drop6").addEventListener('click', function () {
+            console.log('color drop6')
+        });
+        document.getElementById("drop7").addEventListener('click', function () {
+            console.log('color drop7')
+        });
+        document.getElementById("drop8").addEventListener('click', function () {
+            console.log('color drop8')
+        });
+    }
+
     const eventListeners = () => {
         //Scale Random Button
         document.getElementById(DOM.btnRand).addEventListener('click', function() {
@@ -594,7 +626,7 @@ const view = ((mod, scaleCtrl) => {
             scaleCtrl.mrkDisp();
             //ctrl.menuDispClear();
         });
-        //Scal Generate Button
+        //Scale Generate Button
         document.getElementById(DOM.btnMenu).addEventListener('click', function() {
             scaleCtrl.menuChordTextDisp();
             scaleCtrl.menuRootDisp();
@@ -602,6 +634,8 @@ const view = ((mod, scaleCtrl) => {
             scaleCtrl.menuExDisp();
             scaleCtrl.mrkDisp();
         });
+
+        colorKeyEventListen();
     }
 
     return {

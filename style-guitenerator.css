@@ -88,22 +88,60 @@ h1 {
     margin: 20px 33%;
 }
 
-.color-key span select {
-    border: none;
-}
-
 .color-key span {
     height: 25px;
     width: 25px;
     transform: rotate(45deg);
 }
 
-.color-key span div {
+.color-dropdown {
+    position: relative;
     display: flex;
+    /* flex-direction: column; */
+    /* flex-wrap: nowrap; */
+}
+
+.color-drop-content {
+    position: relative;
     transform: rotate(-45deg);
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.color-drop-content a {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    width: 35px;
+    background-color: rgb(172, 110, 110);
+}
+
+.color-drop-content a:hover {
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.color-dropdown:hover .color-drop-content {
+    position: relative;
+    display: flex;
+    /* background-color: rgb(218, 112, 112); */
+    display: flex;
+    z-index: 1;
+}
+
+.color-key button {
+    display: flex;
+    /* transform: rotate(-45deg); */
     justify-content: center;
-    margin-top: 3px;
-    margin-right: 2px;
+    height: 25px;
+    width: 25px;
+    background-color: #fc5549; /* Root */
+    border: none;
+}
+
+.color-key button p {
+    transform: rotate(-45deg);
 }
 
 .color-key span:nth-child(1) {
@@ -236,6 +274,7 @@ h1 {
     height: 200px;
     border: 1px solid #888;
     border-left: none;
+    z-index: -1;
 }
 
 
