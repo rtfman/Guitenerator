@@ -77,7 +77,6 @@ const scaleController = (() => {
     let displayRoot, displayQual, displayEx1, displayEx2;
     let rootArrAfter, rootArrBefore, fullRootArr, rootIndex;
     let DOMNotes = [];
-
     let  selectRt, selectQ, selectEx1, selectEx2;
     
     const DOM = {
@@ -229,7 +228,7 @@ const scaleController = (() => {
         markerReset();
         
         let noteC = document.querySelectorAll(DOM.c);
-        let noteCSh = document.querySelectorAll(DOM.cSH);
+        let noteCSh = document.querySelectorAll(DOM.cSh);
         let noteD = document.querySelectorAll(DOM.d);
         let noteDSh = document.querySelectorAll(DOM.dSh);
         let noteE = document.querySelectorAll(DOM.e);
@@ -494,7 +493,7 @@ const scaleController = (() => {
             //console.log(displayEx1);
         },
 
-        //Display Chord Text From Chord Menu
+        //Display Chord Text From Chord Menu Choices
         menuChordTextDisp: () => {
             const dispRt = document.getElementById(DOM.rootDisp);
             const dispQ = document.getElementById(DOM.qualDisp);

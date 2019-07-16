@@ -22,7 +22,8 @@ body {
 	-ms-flex-align: center;
 	align-items: center;
 	width: 100vw;
-	padding: 50px;
+    padding: 50px;
+    
 }
 
 h1 {
@@ -70,8 +71,6 @@ h1 {
     height: 50px;
 }
 
-
-
 #root-disp, 
 #qual-disp, 
 #ex1-disp{
@@ -80,12 +79,17 @@ h1 {
     justify-content: center;
 }
 
+/* Note Marker Color Key */
 .color-key {
     display: flex;
     justify-content: space-around;
     font-size: 14px;
     width: 33%;
     margin: 20px 33%;
+}
+
+.color-key span select {
+    border: none;
 }
 
 .color-key span {
@@ -132,8 +136,7 @@ h1 {
     display: flex;
     flex-direction: row;
     width: 75%;
-    margin: 0 12.5%;
-    height: 100px;
+    margin: 0 12.5% 15px 12.5%;
     position: relative;
     justify-content: space-between;
 }
@@ -158,8 +161,9 @@ h1 {
 }
 
 .select-style {
-    border: 1px solid #e7e7e7;
-    height: 44px;
+    border: 1px solid;
+    border-radius: 35px;
+    height: 27px;
     font-size: 16px;
     background-color: #fff;
     font-weight: 400;
@@ -196,15 +200,25 @@ h1 {
 .btn-wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .btn {
+    color: rgba(88, 88, 88, 0.945);
     font-size: 20px;
     border-radius: 7%;
     width: 120px;
-    height: 40px;
-    margin: 15px;
-    margin-top: 35px; 
+    height: 42px;
+    margin-top: 27px;
+    margin-left: 15px; 
+    border: 1px solid rgba(82, 159, 247, 0.479);
+    border-radius: 25px;
+    background-color: #fff;
+    transition: background-color, .3s;
+}
+
+.btn:hover {
+    background-color: rgba(38, 137, 250, 0.479);
 }
 
 
