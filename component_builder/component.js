@@ -45,17 +45,49 @@ const colorKeyChanger = () => {
     }
 }
 
+let william = 'will'
+
+const toString = (name) => {
+    console.log(name, `${name}`)
+} 
+
+//toString(will);
+
+
+const colorKeyDisp = (node) => {
+    this.node = node;
+    let tx;
+    convertToText = (el) => {
+        tx = Object.keys({el})[0]
+        console.log(tx);
+    }
+    convertToText(node);
+    console.log();
+    //document.getElementById(node).textContent = tx;
+}
+
+colorKeyDisp(william);
 
 
 
+let M2 = {
+    node: '.node-test', //document.querySelectorAll(`${DOMNotes[2]}`),
+    name: 'M2'
+};
 
+let m2 = {
+    node: '.node-test2',
+    name: 'm2'
+}
 
+let M3 = {
+    node: '.node-test3',
+    name: 'M3a'
+}
 
+let noteArr = [M2, m2, M3]
 
-
-
-
-
+console.log(noteArr[0].node);
 
 
 

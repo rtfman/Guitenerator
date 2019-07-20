@@ -35,55 +35,54 @@
                     <p id="menu-label">QUALITY</p>
                     <select class="select-style q">
                         <option value="none" selected>none</option>
-                        <option value="M" >M</option>
-                        <option value="M6">M6</option>
-                        <option value="M7">M7</option>
-                        <option value="m">m</option>
-                        <option value="min6">m6</option>
-                        <option value="min7">m7</option>
-                        <option value="min/M7">min/M7</option>
-                        <option value="min7b5">m7b5</option>
-                        <option value="dim">dim</option>
-                        <option value="dim7">dim7</option>
-                        <option value="aug">aug</option>
-                        <option value="aug7">aug7</option>
-                        <option value="sus2">sus2</option>
-                        <option value="sus4">sus4</option>
-                        <option value="7">7</option>
+                        <option value="Ion" >Ionian</option>
+                        <option value="Dor">Dorian</option>
+                        <option value="Phry">Phrygian</option>
+                        <option value="Lyd">Lydian</option>
+                        <option value="Mix">Mixolydian</option>
+                        <option value="Aeo">Aeolian</option>
+                        <option value="Loc">Locrian</option>
                     </select>
                 </div>
                 <div class="menu ex">
-                    <p id="menu-label">EX 1</p>
+                    <p id="menu-label">FRET</p>
                     <select class="select-style ex1">
-                        <option value="null">none</option>
-                        <option value="b9">b9</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="#9">#9</option>
+                        <option value="10">10</option>
                         <option value="11">11</option>
-                        <option value="#11">#11</option>
-                        <option value="#5">#5</option>
-                        <option value="b13">b13</option>
-                        <option value="13">13</option>
+                        <option value="12">12</option>
                     </select>
                 </div>
-                
+                <p>to</p>
                 <div class="menu ex">
-                    <p id="menu-label">EX 2</p>
-                    <select class="select-style ex2">
-                        <option value="null">none</option>
-                        <option value="b9">b9</option>
-                        <option value="9">9</option>
-                        <option value="#9">#9</option>
-                        <option value="11">11</option>
-                        <option value="#11">#11</option>
-                        <option value="b13">b13</option>
-                        <option value="13">13</option>
-                    </select>
+                    <p id="menu-label">FRET</p>
+                    <select class="select-style ex1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
                 </div>
                 
                 <div class="btn-wrapper">
                         <button class="btn" id="btn-menu-gen">GENERATE</button>
-                        <button class="btn" id="btn-rand-gen">RANDOM!</button>
+                        <!-- <button class="btn" id="btn-rand-gen">RANDOM!</button> -->
                 </div>
             
             
@@ -98,82 +97,109 @@
                 <div id="qual-disp"></div>
                 <div id="ex1-disp"></div>      
             </div>
+            <!-- COLOR KEY -->
             <span class="color-key">
-                    <span class="color-dropdown">
-                        <!-- <button class="btn-color-drop"></button> -->
-                        <div class="color-drop-content">
-                            <a id="drop0">1</a>
-                            <a id="drop1">2</a>
-                            <a id="drop2">3</a>
-                            <a id="drop3">4</a>
-                            <a id="drop4">5</a>
-                            <a id="drop5">6</a>
-                            <a id="drop6">7</a>
-                            <a id="drop7">8</a>
-                        </div>
-                    </span>
-                        
-                    <span class="color-dropdown">
-                        <div class="color-drop-content">
-                            <a id="drop0">1</a>
-                            <a id="drop1">2</a>
-                            <a id="drop2">3</a>
-                            <a id="drop3">4</a>
-                            <a id="drop4">5</a>
-                            <a id="drop5">6</a>
-                            <a id="drop6">7</a>
-                            <a id="drop7">8</a>
-                        </div>
-                    </span>
-                    <span class="color-dropdown">
-                        <div class="color-drop-content">
-                            <a id="drop0">1</a>
-                            <a id="drop1">2</a>
-                            <a id="drop2">3</a>
-                            <a id="drop3">4</a>
-                            <a id="drop4">5</a>
-                            <a id="drop5">6</a>
-                            <a id="drop6">7</a>
-                            <a id="drop7">8</a>
-                        </div>
-                    </span>
-                    <span class="color-dropdown">
-                        <div class="color-drop-content">
-                            <a id="drop1">1</a>
-                            <a id="drop2">2</a>
-                            <a id="drop3">3</a>
-                            <a id="drop4">4</a>
-                            <a id="drop5">5</a>
-                            <a id="drop6">6</a>
-                            <a id="drop7">7</a>
-                            <a id="drop8">8</a>
-                        </div>
-                    </span>
-                    <span class="color-dropdown">
-                        <div class="color-drop-content">
-                            <a id="drop0">1</a>
-                            <a id="drop1">2</a>
-                            <a id="drop2">3</a>
-                            <a id="drop3">4</a>
-                            <a id="drop4">5</a>
-                            <a id="drop5">6</a>
-                            <a id="drop6">7</a>
-                            <a id="drop7">8</a>
-                        </div>                    
-                    </span>
-                    <span class="color-dropdown">
-                        <div class="color-drop-content">
-                            <a id="drop0">1</a>
-                            <a id="drop1">2</a>
-                            <a id="drop2">3</a>
-                            <a id="drop3">4</a>
-                            <a id="drop4">5</a>
-                            <a id="drop5">6</a>
-                            <a id="drop6">7</a>
-                            <a id="drop7">8</a>
-                        </div>                    
-                    </span>
+                <!--Root-->
+                <span class="color-dropdown">
+                    <p id="color-key-root">R</p>
+                    <div class="color-drop-content">
+                        <a id="drop0">1</a>
+                        <a id="drop1">2</a>
+                        <a id="drop2">3</a>
+                        <a id="drop3">4</a>
+                        <a id="drop4">5</a>
+                        <a id="drop5">6</a>
+                        <a id="drop6">7</a>
+                        <a id="drop7">8</a>
+                    </div>
                 </span>
+                
+                <!-- 2nd -->    
+                <span class="color-dropdown">
+                    <p id="color-key-2nd"></p>
+                    <div class="color-drop-content">
+                        <a id="drop0">1</a>
+                        <a id="drop1">2</a>
+                        <a id="drop2">3</a>
+                        <a id="drop3">4</a>
+                        <a id="drop4">5</a>
+                        <a id="drop5">6</a>
+                        <a id="drop6">7</a>
+                        <a id="drop7">8</a>
+                    </div>
+                </span>
+                
+                <!-- 3rd -->
+                <span class="color-dropdown">
+                    <p id="color-key-3rd"></p>
+                    <div class="color-drop-content">
+                        <a id="drop0">1</a>
+                        <a id="drop1">2</a>
+                        <a id="drop2">3</a>
+                        <a id="drop3">4</a>
+                        <a id="drop4">5</a>
+                        <a id="drop5">6</a>
+                        <a id="drop6">7</a>
+                        <a id="drop7">8</a>
+                    </div>
+                </span>
+                <!-- 4th -->
+                <span class="color-dropdown">
+                    <p id="color-key-4th"></p>    
+                    <div class="color-drop-content">
+                        <a id="drop0">1</a>
+                        <a id="drop1">2</a>
+                        <a id="drop2">3</a>
+                        <a id="drop3">4</a>
+                        <a id="drop4">5</a>
+                        <a id="drop5">6</a>
+                        <a id="drop6">7</a>
+                        <a id="drop7">8</a>
+                    </div>
+                </span>
+                <!-- 5th -->
+                <span class="color-dropdown">
+                    <p id="color-key-5th"></p>
+                    <div class="color-drop-content">
+                        <a id="drop0">1</a>
+                        <a id="drop1">2</a>
+                        <a id="drop2">3</a>
+                        <a id="drop3">4</a>
+                        <a id="drop4">5</a>
+                        <a id="drop5">6</a>
+                        <a id="drop6">7</a>
+                        <a id="drop7">8</a>
+                    </div>                    
+                </span>
+                <!-- 6th -->
+                <span class="color-dropdown">
+                    <p id="color-key-6th"></p>
+                    <div class="color-drop-content">
+                        <a id="drop0">1</a>
+                        <a id="drop1">2</a>
+                        <a id="drop2">3</a>
+                        <a id="drop3">4</a>
+                        <a id="drop4">5</a>
+                        <a id="drop5">6</a>
+                        <a id="drop6">7</a>
+                        <a id="drop7">8</a>
+                    </div>                    
+                </span>
+                <!-- 7th -->
+                <span class="color-dropdown">
+                    <p id="color-key-7th"></p>
+                    <div class="color-drop-content">
+                        <a id="drop0">1</a>
+                        <a id="drop1">2</a>
+                        <a id="drop2">3</a>
+                        <a id="drop3">4</a>
+                        <a id="drop4">5</a>
+                        <a id="drop5">6</a>
+                        <a id="drop6">7</a>
+                        <a id="drop7">8</a>
+                    </div>                    
+                </span>
+            </span>
 
             <div class="fretboard">
                 <!-- Open Fret -->
@@ -300,7 +326,9 @@
                 </ul>
             </div>
         </div>
-        <!-- HORD GENERATOR WRAPPER -->
+        
+        
+        <!-- CHORD GENERATOR WRAPPER -->
         <div class="chord-wrapper">
             <div class="ch-menu-wrapper">
                 <div class="menu rt">
